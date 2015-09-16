@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 function load()
 {
@@ -85,7 +85,7 @@ function load()
     returnDate = rentals[i].returnDate;
     var d1 = new Date(pickupDate);
     var d2 = new Date(returnDate);
-    duration = (d2.getTime() - d1.getTime()) / 86400000 + 1;
+    duration = (d2.getTime() - d1.getTime()) / (60 * 60 * 24 * 1000) + 1;
 
     for(var j = 0; j < cars.length; j++)
     {
