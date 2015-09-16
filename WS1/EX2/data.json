@@ -14,7 +14,7 @@
         "firstName": "Paul",
         "lastName": "Bismuth"
       },
-      "carId": "p306",
+      "car_id": "p306",
       "pickupDate": "2015-09-12",
       "returnDate": "2015-09-12",
       "distance": 100
@@ -25,7 +25,7 @@
         "firstName": "Rebecca",
         "lastName": "Solanas"
       },
-      "carId": "p306",
+      "car_id": "p306",
       "pickupDate": "2015-09-10",
       "returnDate": "2015-09-15",
       "distance": 300
