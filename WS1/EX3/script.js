@@ -82,11 +82,13 @@ function printRentalInfo(rental)
 
         var durationPrice = getDurationPrice(duration, pricePerDay);
         price = rental.distance * pricePerKm + durationPrice;
-        result +=  driver + " rented the " + rental.car_id + " car for ";
-        result +=  duration + "days (" + pricePerDay + "/day) and drove ";
-        result +=  rental.distance + "km (" + pricePerKm + "/km) for a total of ";
-        result +=  "<span style='color:red;font-weight:bold;'>" +price+ "</span><br>";
-        result +=  computeCommission(duration, price);
+        result +=  "#" + rental.id + ":<br>" + driver + " rented the "
+                + rental.car_id + " car for " + duration + " days ("
+                + pricePerDay + "E/day) and drove " + rental.distance + "km ("
+                + pricePerKm + "E/km) for a total of"
+                + "<span style='color:red;font-weight:bold;'>" + price
+                + "E</span><br>"
+                + computeCommission(duration, price);
         break;
       }
   }
@@ -146,10 +148,10 @@ function computeCommission(duration, price)
   //Drivy takes the rest
   var drivy = Math.round(10 * (halfCom - duration)) / 10;
 
-  var result = "The commission (30%) is divided as following:<br>";
-  result += "&nbsp;- insurance : " + halfCom + "<br>";
-  result += "&nbsp;- assistance : " + duration + "<br>";
-  result += "&nbsp;- drivy : " + drivy + "<br><br>";
+  var result = "The commission (30%) is divided as following:<br>"
+            + "&nbsp;- insurance : " + halfCom + "E<br>"
+            + "&nbsp;- assistance : " + duration + "E<br>"
+            + "&nbsp;- drivy : " + drivy + "E<br><br>";
 
   return result;
 }

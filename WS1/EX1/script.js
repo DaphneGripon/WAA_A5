@@ -92,10 +92,12 @@ function printRentalInfo(rental)
         pricePerKm = cars[j].pricePerKm;
         pricePerDay = cars[j].pricePerDay;
         price = rental.distance * pricePerKm + duration * pricePerDay;
-        result +=  driver + " rented the " + rental.car_id + " car for ";
-        result +=  duration + "days(" + pricePerDay + "/day) and drove ";
-        result +=  rental.distance + "km(" + pricePerKm + "/km) for a total of ";
-        result +=  "<span style='color:red;font-weight:bold;'>" +price+ "</span><br>";
+        result +=  "#" + rental.id + ":<br>" + driver + " rented the "
+                + rental.car_id + " car for " + duration + "days ("
+                + pricePerDay + "E/day) and drove " + rental.distance + "km("
+                + pricePerKm + "E/km) for a total of "
+                + "<span style='color:red;font-weight:bold;'>" + price
+                + "E</span><br><br>";
         break;
       }
   }
