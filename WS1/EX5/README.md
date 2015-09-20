@@ -11,7 +11,7 @@ It's time to debit/credit each actor!
 - **the owner** receives the **rental price** minus the **commission**
 - **the insurance** receives its part of the **commission**
 - **the assistance** receives its part of the **commission**
-- **drivy receives** its part of the **commission**, plus the **deductible reduction**
+- **drivy** receives its part of the **commission**, plus the **deductible reduction**
 
 ```js
 {
