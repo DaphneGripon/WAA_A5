@@ -135,7 +135,8 @@ function printRentalInfo(rental)
         }
         if(comm.newDebts)
         {
-          result += "<div class='changes'>RENTAL MODIFICATIONS:<br>";
+          result += "<div class='changes'>RENTAL MODIFICATIONS: Delta"
+                  + " after previous payments.<br>";
           for(var indexNB = 0; indexNB < comm.debts.length; indexNB++)
           {
             var party = comm.newDebts[indexNB];
