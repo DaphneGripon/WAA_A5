@@ -1,0 +1,18 @@
+.demo-layout-transparent {
+  background: url('http://www.getmdl.io/assets/demos/transparent.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+.mdl-layout__content {
+  margin: 50px;
+  background-color: rgba(255,255,255,0.6);
+  padding: 75px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: #2E3C42;
+}
