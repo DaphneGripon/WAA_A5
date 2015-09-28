@@ -85,7 +85,7 @@ function printRentalInfo(rental)
         result +=  "#" + rental.id + ":<br>" + driver + " rented the "
                 + rental.car_id + " car for " + duration + " days ("
                 + pricePerDay + "E/day) and drove " + rental.distance + "km ("
-                + pricePerKm + "E/km) for a total of"
+                + pricePerKm + "E/km) for a total of "
                 + "<span style='color:red;font-weight:bold;'>" + price
                 + "E</span><br>"
                 + computeCommission(duration, price);
