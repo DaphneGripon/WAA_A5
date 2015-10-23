@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LeBonCoin Analyzer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap-3.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../jumbotron.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/javascripts/jsscript.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">PERIDIER - GRIPON</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>LeBonCoin.js</h1>
+        <p>Veuillez renseigner dans le champ suivant, l'url d'une annonce Le Bon Coin:</p>
+        <form class="navbar-collapse navbar-form" method="GET" action="/result" onsubmit="return formSubmit()">
+          <div class="form-group">
+            <input id="url_input" name="url" type="text" placeholder="http://www.leboncoin.fr/voitures/870654921.htm" value=<%= url %> class="form-control"/>
+          </div>
+          <input class="btn btn-primary btn-lg" type="submit" value="V&eacute;rifier l'offre &raquo;" />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <img id="loader" src="preloader.gif" width="200px" height="200px" alt="loader"/>
+      <!-- Example row of columns -->
+      <div class="row" id="content">
+        <div class="col-md-4">
+          <img id="carimg" width="320px" height="auto" src= <%=car.img%> />
+        </div>
+        <div class="col-md-4">
+        <h2 id="car_main_info"><%=car.brand%> - <%=car.model%> - <%=car.releaseDate%></h2>
+        <p id="car_info">Ville: <%=car.city%>
+          <br>Code Postal: <%=car.postalCode%>
+          <br>Kilom&egrave;trage: <%=car.kilometers%>
+          <br>Carburant: <%=car.fuel%>
+          <br>Bo&icirc;te de vitesse: <%=car.gearBox%>
+          <br>
+          <br>
+          Version :
+          <select id="versionChoice" onchange="changeVersion()">
+            <% for(var v=0; v<finalTab.length; v++)
+            { %>
+              <option value="<%=finalTab[v].price%>_<%=finalTab[v].color%>"><%=finalTab[v].version%></option>
+            <% } %>
+          </select>
+        </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Prix</h2>
+          Annonce :
+          <p id="adPrice" class="argus <%= finalTab[0].color %>" ><%=car.price%> &euro;</p>
+          C&ocirc;te Argus :
+          <p id="argusPrice" class="argus"><%=finalTab[0].price%> &euro;</p>
+        </div>
+      </div>
+
+
+      <footer  class="free">
+            <hr>
+        <p>&copy; ESILV 2015</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bootstrap-3.3.5/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
