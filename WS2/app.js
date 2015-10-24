@@ -2,7 +2,6 @@ var app = require('express')();
 var path = require('path');
 var lbc = require('./leboncoin.js');
 var lacentrale = require('./lacentrale.js');
-var main = require('./main.js');
 var serveStatic = require('serve-static');
 
 app.engine('html', require('ejs').renderFile);

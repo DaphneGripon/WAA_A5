@@ -18,7 +18,8 @@ module.exports = function(link, callback){
 				var gearBox = data.substring(data.indexOf('te de vitesse :</th>')+45,data.lastIndexOf('<div class="clearer"></div>')-464);
 				var city = data.substring(data.indexOf('<td itemprop="addressLocality">')+31,data.indexOf('<th>Code postal :</th>')-103);
 				var postalCode = data.substring(data.indexOf('<td itemprop="postalCode">')+26,data.indexOf('<tr itemprop="geo"')-103);
-				var price = data.substring(data.indexOf('priceCurrency')+150,data.indexOf('availableAtOrFrom')-294);
+				var price = data.substring(data.indexOf('priceCurrency')+134,data.indexOf('availableAtOrFrom')-294);
+				var finalprice = price.substring(price.indexOf('">')+2,price.length);
 				var picture = data.substring(data.indexOf('<a id="image" onclick="return nextImage();" class="images" style="background-image: url(')+89,data.indexOf('<div class="thumbs_carousel_window">')-251);
 
 				if(gearBox === 'Manuelle')
@@ -35,7 +36,7 @@ module.exports = function(link, callback){
 					"gearBox" : gearBox,
 					"city" : city,
 					"postalCode" : postalCode.replace(' ',''),
-					"price" : price.replace(' ',''),
+					"price" : finalprice.replace(' ',''),
 					"img" : picture
 				};
 				console.log(car);

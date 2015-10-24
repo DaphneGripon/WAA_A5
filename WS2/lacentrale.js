@@ -52,7 +52,7 @@ module.exports = function(car, callback)
 									);
 								});
 
-								console.log("final tabV length: "+tabVersion.length);
+								console.log("Number of versions: "+tabVersion.length);
 								getHttpForLink2(0, tabVersion, finalTab, car, callback);
 							};
 							}
